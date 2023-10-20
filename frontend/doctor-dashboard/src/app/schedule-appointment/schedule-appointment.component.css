@@ -1,0 +1,8 @@
+.appointment-date {
+  background-color: #ffcdd2; /* Change the background color as desired */
+}
+
+.unavailable-date {
+  pointer-events: none; /* Disable pointer events on unavailable dates */
+  opacity: 0.5; /* Reduce the opacity of unavailable dates */
+}

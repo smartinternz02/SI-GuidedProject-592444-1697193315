@@ -1,0 +1,76 @@
+<style>
+  .dashboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .section {
+    flex: 1 1 100px;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .section h2 {
+    margin-top: 0;
+  }
+
+  .patient-chart,
+  .appointment-chart,
+  .doctor-chart {
+    width: 100%;
+    height: auto;
+  }
+  </style>
+
+  <div class="dashboard">
+    <div class="section">
+      <h2 class="text-center">Patients</h2>
+      <div style="display: block ; color: aqua!important;">
+        <canvas class="patient-chart" baseChart
+                [datasets]="patientChartData"
+                [labels]="patientChartLabels"
+                [options]="patientChartOptions"
+                [type]="'doughnut'">
+        </canvas>
+      </div>
+    </div>
+    <div class="section">
+      <h2 class="text-center">Appointments</h2>
+      <div style="display: block">
+        <canvas class="appointment-chart" baseChart
+                [datasets]="appointmentChartData"
+                [labels]="appointmentChartLabels"
+                [options]="appointmentChartOptions"
+                [type]="'doughnut'">
+        </canvas>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="text-center">Doctors</h2>
+      <div style="display: block">
+        <canvas class="doctor-chart" baseChart
+                [datasets]="doctorChartData"
+                [labels]="doctorChartLabels"
+                [options]="doctorChartOptions"
+                [type]="'doughnut'">
+        </canvas>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="text-center">Doctor Specialties</h2>
+      <div style="display: block">
+        <canvas class="appointment-chart" baseChart
+
+                [labels]="appointmentChartLabels"
+                [options]="appointmentChartOptions"
+                [type]="'pie'">
+        </canvas>
+      </div>
+    </div>
+  </div>

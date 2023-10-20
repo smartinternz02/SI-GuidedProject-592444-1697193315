@@ -1,0 +1,6 @@
+<h2>Add Patient</h2>
+<mat-form-field appearance="fill">
+  <mat-label>Patient Name</mat-label>
+  <input matInput #nameInput type="text" placeholder="Patient Name">
+</mat-form-field>
+<button mat-raised-button color="primary" (click)="addPatient(nameInput.value)">Add</button>

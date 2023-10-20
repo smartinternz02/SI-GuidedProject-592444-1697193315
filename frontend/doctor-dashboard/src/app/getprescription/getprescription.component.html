@@ -1,0 +1,39 @@
+<h2>Prescription</h2>
+
+<form [formGroup]="prescriptionForm">
+  <div>
+    <mat-form-field>
+      <mat-label>Appointment ID</mat-label>
+      <input matInput type="text" id="appointmentId" formControlName="appointmentId" required (input)="onAppointmentIdChangeName()">
+    </mat-form-field>
+    <br>
+    <div class="container">
+      <span *ngIf="selectedPatientName">Patient Name: {{ selectedPatientName }}</span>
+    </div>
+  </div>
+
+  <div>
+    <button mat-raised-button color="primary" type="button" (click)="onAppointmentIdChange()">Get Prescription</button>
+    <button mat-raised-button color="primary" type="button" (click)="downloadPrescription()">Download</button>
+  </div>
+
+  <table *ngIf="selectedPrescription" class="table">
+    <thead>
+      <tr>
+        <th>PatientID</th>
+        <th>Medication</th>
+        <th>Dosage</th>
+        <th>Instructions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ selectedPrescription.appointment.patient }}</td>
+
+        <td>{{ selectedPrescription.medication }}</td>
+        <td>{{ selectedPrescription.dosage }}</td>
+        <td>{{ selectedPrescription.instructions }}</td>
+      </tr>
+    </tbody>
+  </table>
+</form>

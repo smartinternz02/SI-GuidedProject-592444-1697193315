@@ -1,0 +1,22 @@
+
+<div class="container p-2">
+  <h2 class="text-center">Payment</h2>
+<hr>
+<form [formGroup]="paymentForm" (ngSubmit)="onSubmit()">
+  <div>
+    <mat-form-field>
+      <mat-label>Appointment ID</mat-label>
+      <input matInput type="text" id="appointmentId" formControlName="appointmentId" required>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field>
+      <mat-label>Amount</mat-label>
+      <input matInput type="number" id="amount" formControlName="amount" required>
+    </mat-form-field>
+  </div>
+  <div>
+    <button mat-raised-button color="primary" type="submit" [disabled]="paymentForm.invalid">Make Payment</button>
+  </div>
+</form>
+</div>

@@ -1,0 +1,11 @@
+.appointment-date {
+  background-color: red;
+  color: white;
+}
+.has-appointments .mat-calendar-body-cell-content {
+  background-color: red;
+  color: white;
+}
+.has-appointments {
+  background-color: #ff8080;
+}
